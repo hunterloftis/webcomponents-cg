@@ -19,6 +19,10 @@
             name: "Westbrook Johnson",
             url: "https://westbrookjohnson.com",
           },
+          {
+            name: "Justin Fagnani",
+            url: "https://github.com/justinfagnani",
+          },
         ],
         github: "w3c/webcomponents-cg",
         shortName: "webcomponents-cg",
@@ -49,6 +53,12 @@
         </thead>
         <tbody>
           <tr>
+            <th>Declarative CSS Modules</th>
+            <td><a href="https://github.com/WICG/webcomponents/issues/939">WICG/webcomponents#939</a></td>
+            <td>High</td>
+            <td>Not Addressed</td>
+          </tr>
+          <tr>
             <th>---</th>
             <td>---</td>
             <td>---</td>
@@ -56,6 +66,25 @@
           </tr>
         </tbody>
       </table>
+    </section>
+    <section>
+      <h2>Declarative CSS Modules</h2>
+      <dl>
+        <dt>GitHub Issue(s):</dt>
+        <dd><a href="https://github.com/WICG/webcomponents/issues/939">WICG/webcomponents#939</a></dd>
+        <dt>Priority:</dt>
+        <dd>High</dd>
+        <dt>Status:</dt>
+        <dd>Not Addressed</dd>
+      </dl>
+      <section>
+        <h3>Description</h3>
+        <p>Declarative shadow roots and constructible stylesheets need to be made to work together so that stylesheets added to shadow roots can be round-tripped through HTML serialization and deserialization.</p>
+      </section>
+      <section>
+        <h3>Motivation</h3>
+        <p>urrently, there is no way to associate a declarative shadow root with a constructed stylesheet. This means that when a custom element with a shadow root and adopted stylesheets is serialized to HTML, it either loses its styling or some additional code has to convert the adopted stylesheets to style tags and insert them into the markup.</p>
+      </section>
     </section>
     <section>
       <h2>Feature or Problem</h2>
