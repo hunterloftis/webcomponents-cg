@@ -19,6 +19,14 @@
             name: "Westbrook Johnson",
             url: "https://westbrookjohnson.com",
           },
+          {
+            name: "William Riley",
+            url: "https://github.com/splitinfinities",
+          },
+          {
+            name: "Justin Fagnani",
+            url: "https://github.com/justinfagnani",
+          },
         ],
         github: "w3c/webcomponents-cg",
         shortName: "webcomponents-cg",
@@ -49,6 +57,12 @@
         </thead>
         <tbody>
           <tr>
+            <th><a href="http://localhost:8080/status.html#constructable-stylesheets-adoptedstylesheets">Constructable Stylesheets & adoptedStyleSheets</a></th>
+            <td><a href="https://github.com/WICG/webcomponents/issues/169">WICG/webcomponents#468</a></td>
+            <td>Critical</td>
+            <td>Some implementation</td>
+          </tr>
+          <tr>
             <th>---</th>
             <td>---</td>
             <td>---</td>
@@ -56,6 +70,29 @@
           </tr>
         </tbody>
       </table>
+    </section>
+    <section>
+      <h2>Constructable Stylesheets & adoptedStyleSheets</h2>
+      <dl>
+        <dt>GitHub Issue(s):</dt>
+        <dd><a href="https://github.com/WICG/webcomponents/issues/169">WICG/webcomponents#468</a></dd>
+        <dt>Priority:</dt>
+        <dd>Critical</dd>
+        <dt>Status:</dt>
+        <dd>Some implementation</dd>
+      </dl>
+      <section>
+        <h3>Description</h3>
+        <p>Constructable Stylesheets and `adoptedStyleSheets` enable adding styles directly to shadow roots without creating new DOM elements. Because a single stylesheet object can be adopted by multiple scopes, it also allows sharing of styles that can be centrally modified.</p>
+      </section>
+      <section>
+        <h3>Motivation</h3>
+        <ul>
+          <li>There is no effective way to share styles across components while allowing them to be centrally modified.</li>
+          <li>Creating `&lt;style&gt;` elements for each style used in each shadow root has a measurable performance overhead.</li>
+          <li>CSS Module Scripts, another critical feature, depends on constructible stylesheets.</li>
+        </ul>
+      </section>
     </section>
     <section>
       <h2>Feature or Problem</h2>
