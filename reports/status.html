@@ -19,6 +19,14 @@
             name: "Westbrook Johnson",
             url: "https://westbrookjohnson.com",
           },
+          {
+            name: "Owen Buckley",
+            url: "https://github.com/thescientist13",
+          },
+          {
+            name: "Benny Powers",
+            url: "https://github.com/bennypowers",
+          },
         ],
         github: "w3c/webcomponents-cg",
         shortName: "webcomponents-cg",
@@ -49,6 +57,12 @@
         </thead>
         <tbody>
           <tr>
+            <th><a href="#declarative-custom-elements">Declarative custom elements</a></th>
+            <td><a href="https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md">Strawperson</a></td>
+            <td>High</td>
+            <td>Not addressed</td>
+          </tr>
+          <tr>
             <th>---</th>
             <td>---</td>
             <td>---</td>
@@ -56,6 +70,25 @@
           </tr>
         </tbody>
       </table>
+    </section>
+    <section>
+      <h2>Declarative custom elements</h2>
+      <dl>
+        <dt>GitHub Issue(s):</dt>
+        <dd><a href="https://github.com/WICG/webcomponents/blob/gh-pages/proposals/Declarative-Custom-Elements-Strawman.md">Strawperson</a></dd>
+        <dt>Priority:</dt>
+        <dd>High</dd>
+        <dt>Status:</dt>
+        <dd>Not addressed</dd>
+      </dl>
+      <section>
+        <h3>Description</h3>
+        <p>ְDevelopers would like to define a custom element, it’s shadow-root, and styles from HTML, without need for JavaScript.</p>
+      </section>
+      <section>
+        <h3>Motivation</h3>
+        <p>This would allow them to share reusable components easily without need for extra tooling, and to load them in `&lt;noscript&gt;` contexts. Declarative Shadow DOM allows developers to emulate this using build-tools, but requires repeating the declared shadow roots for each instance.</p>
+      </section>
     </section>
     <section>
       <h2>Feature or Problem</h2>
