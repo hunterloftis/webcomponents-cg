@@ -19,6 +19,10 @@
             name: "Westbrook Johnson",
             url: "https://westbrookjohnson.com",
           },
+          {
+            name: "Hunter Loftis",
+            url: "https://github.com/hunterloftis",
+          },
         ],
         github: "w3c/webcomponents-cg",
         shortName: "webcomponents-cg",
@@ -49,6 +53,12 @@
         </thead>
         <tbody>
           <tr>
+            <th><a href="#composed-selection">Composed Selection</a></th>
+            <td><a href="https://github.com/WICG/webcomponents/issues/79">WICG/webcomponents#79</a></td>
+            <td>High</td>
+            <td>Partial consensus, divergent partial implementations</td>
+          </tr>
+          <tr>
             <th>---</th>
             <td>---</td>
             <td>---</td>
@@ -56,6 +66,36 @@
           </tr>
         </tbody>
       </table>
+    </section>
+    <section>
+      <h2>Composed Selection</h2>
+      <dl>
+        <dt>GitHub Issue(s):</dt>
+        <dd><a href="https://github.com/WICG/webcomponents/issues/79">WICG/webcomponents#79</a></dd>
+        <dt>Priority:</dt>
+        <dd>High</dd>
+        <dt>Status:</dt>
+        <dd>Partial consensus, divergent partial implementations</dd>
+      </dl>
+      <section>
+        <h3>Description</h3>
+        <p>The ability to get a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Selection">Selection</a> from `shadowRoot.getSelection()` or `document.getSelection()`, then subsequently identify the selection range across composed trees of light and/or shadow DOM.</p>
+        <p>TPAC 18 resolved in <a href="https://github.com/WICG/webcomponents/issues/79#issuecomment-432974389">consensus</a> to add `getComposedRange()` to the existing Selection object (<a href="https://github.com/mfreed7/shadow-dom-selection#readme">explainer</a>). However, `Selection.getComposedRange()` is not yet implemented in any browser. Browsers also diverge in their implementations of `shadowRoot.getSelection`:</p>
+        <ul>
+          <li>Chrome always sets `isCollapsed` to true.</li>
+          <li>Firefox has not implemented `shadowRoot.getSelection`, but returns shadow root anchorNodes from `document.getSelection`. This bug can be leveraged to <a href="https://github.com/GoogleChromeLabs/shadow-selection-polyfill">polyfill</a> `shadowRoot.getSelection`.</li>
+          <li>Safari does not implement `shadowRoot.getSelection` and cannot be polyfilled.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Motivation</h3>
+        <p>Selection does not work consistently, or at all, across or within shadow roots. <strong>This makes fully-featured rich-text editors impossible to implement via web components.</strong> Some of the web’s most popular editors have issues that are blocked on this functionality:</p>
+        <ul>
+          <li><a href="https://github.com/tinymce/tinymce/pull/4737#issuecomment-719317085"></a>TinyMCE</a></li>
+          <li><a href="https://github.com/ckeditor/ckeditor5/pull/7846#issuecomment-675477977"></a>CKEditor</a></li>
+          <li><a href="https://github.com/quilljs/quill/pull/1805">Quill</a></li>
+        </ul>
+      </section>
     </section>
     <section>
       <h2>Feature or Problem</h2>
